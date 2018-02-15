@@ -4,7 +4,8 @@
 #' @param owner owner of the repo, string
 #' @param repo repo name, string
 #'
-#' @return
+#' @return a character vector of the top-level contents of the repo.
+#' @details thanks to https://gist.github.com/jonathansick/8bbe88a85addaeeea4e7fe9ef15b016b
 #' @export
 #'
 #' @examples
