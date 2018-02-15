@@ -7,6 +7,7 @@
 #'
 #' @examples
 #' get_repos("jeroen")
+#' get_repos("ropensci")
 get_repos <- function(owner){
   token <- Sys.getenv("GITHUB_GRAPHQL_TOKEN")
   cli <- ghql::GraphqlClient$new(

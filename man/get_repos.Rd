@@ -17,4 +17,5 @@ Get repositories of one owner
 }
 \examples{
 get_repos("jeroen")
+get_repos("ropensci")
 }
