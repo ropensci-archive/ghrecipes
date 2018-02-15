@@ -2,5 +2,6 @@
 
 export(collect_issue_authors)
 export(get_contents)
+export(get_repos)
 export(is_package_repo)
 importFrom(magrittr,"%>%")
