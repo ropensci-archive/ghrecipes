@@ -9,12 +9,7 @@
 #' get_repos("jeroen")
 #' get_repos("ropensci")
 get_repos <- function(owner){
-  token <- Sys.getenv("GITHUB_GRAPHQL_TOKEN")
-  cli <- ghql::GraphqlClient$new(
-    url = "https://api.github.com/graphql",
-    headers = httr::add_headers(Authorization = paste0("Bearer ", token))
-  )
-  cli$load_schema()
+
   query <- paste0('query{
                   repositoryOwner(login: "', owner, '"){
                   repositories(first:100, after: %s){

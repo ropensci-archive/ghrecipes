@@ -1,10 +1,5 @@
 iterate <- function(query) {
-  token <- Sys.getenv("GITHUB_GRAPHQL_TOKEN")
-  cli <- ghql::GraphqlClient$new(
-    url = "https://api.github.com/graphql",
-    headers = httr::add_headers(Authorization = paste0("Bearer ", token))
-  )
-  cli$load_schema()
+  cli <- create_client()
   out <- ""
   last_cursor <- ""
   hasNextPage <- TRUE
@@ -19,4 +14,14 @@ iterate <- function(query) {
     out <- paste0(out, res)
   }
   return(out)
+}
+
+create_client <- function(){
+  token <- Sys.getenv("GITHUB_GRAPHQL_TOKEN")
+  cli <- ghql::GraphqlClient$new(
+    url = "https://api.github.com/graphql",
+    headers = httr::add_headers(Authorization = paste0("Bearer ", token))
+  )
+  cli$load_schema()
+  cli
 }

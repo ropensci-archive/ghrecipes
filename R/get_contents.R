@@ -11,12 +11,7 @@
 #' @examples
 #' get_contents("maelle", "convertagd")
 get_contents <- function(owner, repo){
-  token <- Sys.getenv("GITHUB_GRAPHQL_TOKEN")
-  cli <- ghql::GraphqlClient$new(
-    url = "https://api.github.com/graphql",
-    headers = httr::add_headers(Authorization = paste0("Bearer ", token))
-  )
-  cli$load_schema()
+  cli <- create_client()
   query <- paste0('query{
                   repository(owner: "', owner, '", name:"', repo,'"){
                   ref(qualifiedName: "master") {
