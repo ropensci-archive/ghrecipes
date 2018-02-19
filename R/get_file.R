@@ -16,7 +16,6 @@
 #'          branch = "master", path = "registry.json") %>%
 #'          jsonlite::toJSON()
 get_file <- function(owner, repo, branch, path){
-  cli <- create_client()
   query <- paste0('query {
   repository(name: "', repo,'", owner: "', owner,'") {
                   object(expression: "', branch, ':', path, '") {

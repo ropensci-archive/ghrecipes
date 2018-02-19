@@ -1,5 +1,4 @@
 iterate <- function(query) {
-  cli <- create_client()
   out <- ""
   last_cursor <- ""
   hasNextPage <- TRUE

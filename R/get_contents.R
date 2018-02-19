@@ -11,7 +11,6 @@
 #' @examples
 #' get_contents("maelle", "convertagd")
 get_contents <- function(owner, repo){
-  cli <- create_client()
   query <- paste0('query{
                   repository(owner: "', owner, '", name:"', repo,'"){
                   ref(qualifiedName: "master") {
