@@ -1,5 +1,5 @@
 
-#' Collect authors of issues in a repo
+#' get authors of issues in a repo
 #'
 #' @inheritParams get_contents
 #'
@@ -7,8 +7,8 @@
 #' @export
 #'
 #' @examples
-#' collect_issue_authors("ropensci", "taxize")
-collect_issue_authors <- function(owner, repo){
+#' get_issue_authors("ropensci", "taxize")
+get_issue_authors <- function(owner, repo){
   query <- paste0('{
                   repository(owner: "', owner, '", name: "', repo,'") {
                   issues(first: 100, after: %s) {

@@ -10,7 +10,8 @@ get_repos(owner)
 \item{owner}{string}
 }
 \value{
-string of repos, format org/repo_name
+tibble with name (owner/repo), creation time, latest update time,
+description and is_fork.
 }
 \description{
 Get repositories of one owner
