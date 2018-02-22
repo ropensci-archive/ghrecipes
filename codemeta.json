@@ -1,0 +1,126 @@
+{
+  "@context": ["https://doi.org/doi:10.5063/schema/codemeta-2.0", "http://schema.org"],
+  "@type": "SoftwareSourceCode",
+  "identifier": "ghrecipes",
+  "description": "Uses the ghql package and jqr to get some common data from Github V4 API.",
+  "name": "ghrecipes: Provides some helper functions for using the GitHub V4 API",
+  "license": "https://spdx.org/licenses/MIT",
+  "version": "0.1.0",
+  "programmingLanguage": {
+    "@type": "ComputerLanguage",
+    "name": "R",
+    "version": "3.4.3",
+    "url": "https://r-project.org"
+  },
+  "runtimePlatform": "R version 3.4.3 (2017-11-30)",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Maëlle",
+      "familyName": "Salmon",
+      "email": "maelle.salmon@yahoo.se"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Scott",
+      "familyName": "Chamberlain"
+    }
+  ],
+  "maintainer": {
+    "@type": "Person",
+    "givenName": "Maëlle",
+    "familyName": "Salmon",
+    "email": "maelle.salmon@yahoo.se"
+  },
+  "softwareSuggestions": [
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "testthat",
+      "name": "testthat",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Central R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "covr",
+      "name": "covr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Central R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      }
+    }
+  ],
+  "softwareRequirements": [
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "jqr",
+      "name": "jqr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Central R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "ghql",
+      "name": "ghql"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "stringr",
+      "name": "stringr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Central R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "tibble",
+      "name": "tibble",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Central R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "anytime",
+      "name": "anytime",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Central R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "desc",
+      "name": "desc",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Central R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      }
+    }
+  ],
+  "codeRepository": "https://github.com/maelle/ghrecipes.git",
+  "contIntegration": "https://travis-ci.org/maelle/ghrecipes",
+  "developmentStatus": "wip",
+  "readme": "https://github.com/maelle/ghrecipes.git/blob/master/README.md",
+  "fileSize": "4.703KB"
+}
