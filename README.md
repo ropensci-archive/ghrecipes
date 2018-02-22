@@ -1,4 +1,6 @@
-[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
+[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip) [![Travis build status](https://travis-ci.org/maelle/ghrecipes.svg?branch=master)](https://travis-ci.org/maelle/ghrecipes) [![AppVeyor Build Status](https://ci.appveyor.com/maelle/ghrecipes)](https://ci.appveyor.com/api/projects/status/github//maelle/ghrecipes/?branch=master&svg=true) [![Coverage status](https://codecov.io/gh/maelle/ghrecipes/branch/master/graph/badge.svg)](https://codecov.io/github/maelle/ghrecipes?branch=master)
+
+
 
 # ghrecipes
 

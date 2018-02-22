@@ -17,6 +17,7 @@ Imports:
     desc
 RoxygenNote: 6.0.1.9000
 Suggests: 
-    testthat
+    testthat,
+    covr
 Remotes:
     r-lib/desc
