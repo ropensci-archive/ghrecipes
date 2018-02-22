@@ -14,7 +14,9 @@ Imports:
     stringr,
     tibble,
     anytime,
-    desc
+    desc,
+    magrittr,
+    jsonlite
 RoxygenNote: 6.0.1.9000
 Suggests: 
     testthat,

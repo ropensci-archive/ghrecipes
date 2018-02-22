@@ -44,6 +44,9 @@ get_description <- function(owner, repo, branch = "master"){
   file.remove("DESCRIPTIOOON")
 
   tibble::tibble(package = description$get("Package"),
+                 repo = repo,
+                 owner = owner,
+                 branch = branch,
                  title = description$get("Title"),
                  maintainer = description$get_maintainer(),
                  description = description$get("Description"))
