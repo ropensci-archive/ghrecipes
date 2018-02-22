@@ -13,7 +13,10 @@ Imports:
     ghql,
     stringr,
     tibble,
-    anytime
+    anytime,
+    desc
 RoxygenNote: 6.0.1.9000
 Suggests: 
     testthat
+Remotes:
+    r-lib/desc
