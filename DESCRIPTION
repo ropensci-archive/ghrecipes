@@ -21,3 +21,4 @@ Suggests:
     covr
 Remotes:
     r-lib/desc
+    ropensci/ghql
