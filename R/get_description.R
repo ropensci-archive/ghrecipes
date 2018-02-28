@@ -34,14 +34,17 @@ get_description <- function(owner, repo, branch = "master"){
 
 
   res <- cli$exec(qry$queries$foobar)
+
+  temp_path <- paste0(tempdir(), "\\DESCRIPTION")
+
   res %>%
     jqr::jq(".data.repository.object.text") %>%
     jsonlite::fromJSON() %>%
-    writeLines("DESCRIPTIOOON")
+    writeLines(temp_path)
 
-  description <- desc::description$new(file = "DESCRIPTIOOON")
+  description <- desc::description$new(file = temp_path)
 
-  file.remove("DESCRIPTIOOON")
+  file.remove(temp_path)
 
   tibble::tibble(package = description$get("Package"),
                  repo = repo,
