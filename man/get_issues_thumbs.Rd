@@ -4,12 +4,14 @@
 \alias{get_issues_thumbs}
 \title{get table of issues ordered by number of thumbs up}
 \usage{
-get_issues_thumbs(owner, repo)
+get_issues_thumbs(owner, repo, no_null = TRUE)
 }
 \arguments{
 \item{owner}{owner of the repo, string}
 
 \item{repo}{repo name, string}
+
+\item{no_null}{Boolean, whether to not return issues with no thumb up}
 }
 \value{
 a tibble
