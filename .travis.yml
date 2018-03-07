@@ -6,3 +6,11 @@ cache: packages
 
 after_success:
   - Rscript -e 'covr::codecov()'
+
+addons:
+  apt:
+    sources:
+      - sourceline: 'ppa:opencpu/jq'
+    packages:
+      - libjq-dev
+      - valgrind
