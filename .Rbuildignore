@@ -4,3 +4,4 @@
 ^appveyor\.yml$
 ^codecov\.yml$
 ^codemeta\.json$
+^CODE_OF_CONDUCT\.md$

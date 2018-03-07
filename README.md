@@ -5,7 +5,7 @@
 
 # ghrecipes
 
-The goal of ghrecipes is to provide helper functions for usual GitHub _data mining_ tasks, well at least the ones that are usual or useful for us. :smile_cat:
+The goal of ghrecipes is to provide helper functions for usual GitHub _data mining_ tasks, well at least the ones that are usual or useful for us. :smile_cat: Please suggest and discuss new recipes in [the issues tracker!](https://github.com/maelle/ghrecipes/issues)
 
 It uses[ GitHub V4 API](https://developer.github.com/v4/) queried thanks to the [`ghql` package](https://github.com/ropensci/ghql). Read more about [GitHub V4 API advantages here](https://developer.github.com/v4/#why-is-github-using-graphql). It then formats results using the [`jqr` package](https://github.com/ropensci/jqr), interface to [jq](https://stedolan.github.io/jq/). Read an intro to `jqr` power [here](http://www.carlboettiger.info/2017/12/11/data-rectangling-with-jq/). :rocket:
 
@@ -24,3 +24,9 @@ devtools::install_github("maelle/ghrecipes")
 * `ghql` creates a client on load, called `ghql_gh_cli`.
 
 * See a very basic use case [here](http://www.masalmon.eu/2018/03/04/hrbrpkgs/).
+
+## Meta
+
+Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
+
+By participating in this project you agree to abide by its terms.
