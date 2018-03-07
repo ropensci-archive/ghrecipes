@@ -23,5 +23,5 @@ Suggests:
     testthat,
     covr
 Remotes:
-    r-lib/desc
+    r-lib/desc,
     ropensci/ghql
