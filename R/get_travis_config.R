@@ -35,7 +35,7 @@ get_travis_config <- function(owner, repo, branch = "master"){
 
 
 
-  res <- cli$exec(qry$queries$foobar)
+  res <- ghql_gh_cli$exec(qry$queries$foobar)
 
   temp_path <- paste0(tempdir(), "\\.travis.yml")
 

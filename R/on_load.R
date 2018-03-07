@@ -1,3 +1,3 @@
 .onLoad <- function(libname, pkgname){
-  cli <<- create_client()
+  ghql_gh_cli <<- create_client()
 } # nocov end

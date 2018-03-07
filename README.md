@@ -18,3 +18,9 @@ You can install ghrecipes from GitHub with:
 # install.packages("devtools")
 devtools::install_github("maelle/ghrecipes")
 ```
+
+## Notes on use
+
+* `ghql` creates a client on load, called `ghql_gh_cli`.
+
+* See a very basic use case [here](http://www.masalmon.eu/2018/03/04/hrbrpkgs/).
