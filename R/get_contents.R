@@ -8,8 +8,6 @@
 #' @details thanks to https://gist.github.com/jonathansick/8bbe88a85addaeeea4e7fe9ef15b016b
 #' @export
 #'
-#' @examples
-#' get_contents("maelle", "convertagd")
 get_contents <- function(owner, repo){
   query <- paste0('query{
                   repository(owner: "', owner, '", name:"', repo,'"){

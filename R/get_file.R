@@ -1,11 +1,9 @@
 #' Get contents of a file
 #'
-#' @param owner
-#' @param repo
-#' @param branch
-#' @param path
+#' @inheritParams get_description
+#' @param path path to the file
 #'
-#' @return
+#' @return nothing interesting yet
 #' @export
 #'
 #' @details

@@ -1,3 +1,5 @@
+#' Table of issues info
+#'
 #' @inheritParams get_contents
 #'
 #' @return a tibble of issues info, currently stupidly labels are just concatenated.

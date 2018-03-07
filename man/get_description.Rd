@@ -7,6 +7,10 @@
 get_description(owner, repo, branch = "master")
 }
 \arguments{
+\item{owner}{owner of the repo, string}
+
+\item{repo}{repo name, string}
+
 \item{branch}{master by default}
 }
 \value{

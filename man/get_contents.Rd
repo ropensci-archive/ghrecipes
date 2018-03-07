@@ -20,6 +20,3 @@ Get contents of a repo
 \details{
 thanks to https://gist.github.com/jonathansick/8bbe88a85addaeeea4e7fe9ef15b016b
 }
-\examples{
-get_contents("maelle", "convertagd")
-}

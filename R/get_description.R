@@ -1,7 +1,6 @@
 #' Get description of the package repo
 #'
-#' @param owner
-#' @param repo
+#' @inheritParams get_contents
 #' @param branch master by default
 #'
 #' @return a tibble of basic information from the DESCRIPTION

@@ -1,8 +1,6 @@
 #' Get Travis config file of the package repo
 #'
-#' @param owner
-#' @param repo
-#' @param branch master by default
+#' @inheritParams get_description
 #'
 #' @return a tibble of basic information from the Travis config file
 #' @export

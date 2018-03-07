@@ -7,7 +7,16 @@
 get_file(owner, repo, branch, path)
 }
 \arguments{
-\item{path}{}
+\item{owner}{owner of the repo, string}
+
+\item{repo}{repo name, string}
+
+\item{branch}{master by default}
+
+\item{path}{path to the file}
+}
+\value{
+nothing interesting yet
 }
 \description{
 Get contents of a file
