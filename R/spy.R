@@ -1,6 +1,6 @@
 #' Get latest issues where an user commented
 #'
-#' @param user
+#' @param user username
 #'
 #' @return tibble
 #' @export

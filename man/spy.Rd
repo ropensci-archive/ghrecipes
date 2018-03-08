@@ -7,7 +7,7 @@
 spy(user)
 }
 \arguments{
-\item{user}{}
+\item{user}{username}
 }
 \value{
 tibble
