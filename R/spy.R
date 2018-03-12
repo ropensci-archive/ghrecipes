@@ -48,7 +48,7 @@ spy <- function(user){
     jqr::combine() %>% #
     jsonlite::fromJSON() %>%
     dplyr::as_data_frame() %>%
-    dplyr::mutate(created_at = anytime::anytime(created_at)) %>%
+    dplyr::mutate(created_at = anytime::anytime(.data$created_at)) %>%
     dplyr::mutate(url = glue::glue("<a href='{url}'>{url}</a>"))
 
 }

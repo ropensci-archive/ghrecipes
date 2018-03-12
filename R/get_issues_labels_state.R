@@ -46,8 +46,8 @@ get_issue_labels_state <- function(owner, repo){
     jqr::combine() %>% # single json file
     jsonlite::fromJSON() %>%
     tibble::as_tibble() %>%
-    dplyr::mutate(created_at = anytime::anytime(created_at),
-                  closed_at = anytime::anytime(closed_at),
+    dplyr::mutate(created_at = anytime::anytime(.data$created_at),
+                  closed_at = anytime::anytime(.data$closed_at),
                   owner = owner,
                   repo = repo)
   }

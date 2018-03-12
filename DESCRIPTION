@@ -21,7 +21,8 @@ Imports:
     dplyr,
     httr,
     purrr,
-    glue
+    glue,
+    rlang
 RoxygenNote: 6.0.1.9000
 Suggests: 
     testthat,

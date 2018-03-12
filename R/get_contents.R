@@ -1,5 +1,6 @@
 #' Get contents of a repo
 #' @importFrom magrittr "%>%"
+#' @importFrom rlang .data
 #'
 #' @param owner owner of the repo, string
 #' @param repo repo name, string
@@ -34,7 +35,6 @@ get_contents <- function(owner, repo){
 ')
   qry <- ghql::Query$new()
   qry$query('foobar', query)
-
   create_client()$exec(qry$queries$foobar) %>%
     jqr::jq("..|.entries?|select(.!=null)|.[].name") %>%
     as.character() %>%

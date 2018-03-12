@@ -72,14 +72,14 @@ hasNextPage
     jqr::combine() %>% # single json file
     jsonlite::fromJSON() %>%
     tibble::as_tibble() %>%
-    dplyr::mutate(created_at = anytime::anytime(created_at),
+    dplyr::mutate(created_at = anytime::anytime(.data$created_at),
                   owner = owner,
                   repo = repo,
                   body = stringr::str_sub(body, 1, 300)) %>%
-    dplyr::arrange(- thumbs_up_no)
+    dplyr::arrange(- .data$thumbs_up_no)
 
   if(no_null){
-    dplyr::filter(output, (!!rlang::sym("thumbs_up_no") > 0))
+    dplyr::filter(output, .data$thumbs_up_no > 0)
   }
   }
 

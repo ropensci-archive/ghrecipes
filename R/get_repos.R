@@ -43,7 +43,7 @@ hasNextPage
     jqr::combine() %>% # single json file
     jsonlite::fromJSON() %>%
     tibble::as_tibble() %>%
-    dplyr::mutate(name = stringr::str_replace_all(name, '\\\"', ''),
-                  created_at = anytime::anytime(created_at),
-                  updated_at = anytime::anytime(updated_at))
+    dplyr::mutate(name = stringr::str_replace_all(.data$name, '\\\"', ''),
+                  created_at = anytime::anytime(.data$created_at),
+                  updated_at = anytime::anytime(.data$updated_at))
   }
