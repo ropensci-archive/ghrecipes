@@ -29,7 +29,6 @@ get_file <- function(owner, repo, branch, path){
 
 
 
-  res <- ghql_gh_cli$exec(qry$queries$foobar)
-  res %>%
+  create_client()$exec(qry$queries$foobar) %>%
     jqr::jq(".data.repository.object.text")
 }

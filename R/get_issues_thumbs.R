@@ -79,7 +79,7 @@ hasNextPage
     dplyr::arrange(- thumbs_up_no)
 
   if(no_null){
-    dplyr::filter(output, thumbs_up_no > 0)
+    dplyr::filter(output, (!!rlang::sym("thumbs_up_no") > 0))
   }
   }
 

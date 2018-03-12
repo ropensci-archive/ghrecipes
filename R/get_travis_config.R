@@ -31,19 +31,17 @@ get_travis_config <- function(owner, repo, branch = "master"){
   qry <- ghql::Query$new()
   qry$query('foobar', query)
 
-
-
-  res <- ghql_gh_cli$exec(qry$queries$foobar)
-
   temp_path <- paste0(tempdir(), "\\.travis.yml")
 
-  res %>%
+  create_client()$exec(qry$queries$foobar) %>%
     jqr::jq(".data.repository.object.text") %>%
     jsonlite::fromJSON() %>%
     writeLines(temp_path)
 
   config <- yaml::read_yaml(temp_path) %>%
     purrr::map(toString)
+
+  file.remove(temp_path)
 
   description <- get_description(owner, repo, branch)
 

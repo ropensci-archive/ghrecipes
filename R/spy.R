@@ -36,9 +36,7 @@ spy <- function(user){
   qry <- ghql::Query$new()
   qry$query('foobar', query)
 
-  res <- ghql_gh_cli$exec(qry$queries$foobar)
-
-  res %>%
+  create_client()$exec(qry$queries$foobar) %>%
     jqr::jq(".data.search.edges[].node|select(.!={})") %>%
     jqr::jq("{repo: .repository.nameWithOwner,
             title: .title,

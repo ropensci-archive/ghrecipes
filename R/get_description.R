@@ -31,12 +31,9 @@ get_description <- function(owner, repo, branch = "master"){
   qry$query('foobar', query)
 
 
-
-  res <- ghql_gh_cli$exec(qry$queries$foobar)
-
   temp_path <- paste0(tempdir(), "\\DESCRIPTION")
 
-  res %>%
+  create_client()$exec(qry$queries$foobar) %>%
     jqr::jq(".data.repository.object.text") %>%
     jsonlite::fromJSON() %>%
     writeLines(temp_path)

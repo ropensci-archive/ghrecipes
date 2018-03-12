@@ -35,7 +35,7 @@ get_contents <- function(owner, repo){
   qry <- ghql::Query$new()
   qry$query('foobar', query)
 
-  ghql_gh_cli$exec(qry$queries$foobar) %>%
+  create_client()$exec(qry$queries$foobar) %>%
     jqr::jq("..|.entries?|select(.!=null)|.[].name") %>%
     as.character() %>%
     stringr::str_replace_all('\\\"', '')
