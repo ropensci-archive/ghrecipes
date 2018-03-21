@@ -7,7 +7,7 @@
 #' @export
 #'
 #' @examples
-#' https://github.com/lintr-bot
+#' # https://github.com/lintr-bot
 #' spy("lintr-bot")
 spy <- function(user, type = "Issue"){
   query <- paste0('{

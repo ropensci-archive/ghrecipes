@@ -18,6 +18,6 @@ tibble
 Get latest issues where an user commented
 }
 \examples{
-https://github.com/lintr-bot
+# https://github.com/lintr-bot
 spy("lintr-bot")
 }
