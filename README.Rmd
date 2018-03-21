@@ -39,11 +39,12 @@ devtools::install_github("maelle/ghrecipes")
 
 ## Examples
 
-Don't miss conversations by your favorite developpers.
+Don't miss conversations by your favorite developpers, or comments by your favorite [styling bot](https://github.com/lintr-bot). In that function, only the latest results are returned, and an issue can be a PR.
 
 ```{r}
-convos <- ghrecipes::spy("github")
-knitr::kable(convos)
+ghrecipes::spy("lintr-bot", type = "Issue")
+convos <- ghrecipes::spy("lintr-bot", type = "PullRequest")
+knitr::kable(convos[1:10,])
 ```
 
 ## Meta

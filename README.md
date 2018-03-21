@@ -27,17 +27,27 @@ Notes on use
 Examples
 --------
 
-Don't miss conversations by your favorite developpers.
+Don't miss conversations by your favorite developpers, or comments by your favorite [styling bot](https://github.com/lintr-bot). In that function, only the latest results are returned, and an issue can be a PR.
 
 ``` r
-convos <- ghrecipes::spy("github")
-knitr::kable(convos)
+ghrecipes::spy("lintr-bot", type = "Issue")
+#> NULL
+convos <- ghrecipes::spy("lintr-bot", type = "PullRequest")
+knitr::kable(convos[1:10,])
 ```
 
-| repo                 | title                                    | created\_at         | state  | author        | url                                                                                                                 |  no\_comments|
-|:---------------------|:-----------------------------------------|:--------------------|:-------|:--------------|:--------------------------------------------------------------------------------------------------------------------|-------------:|
-| sorin-ionescu/prezto | Rename and rebrand the project           | 2012-06-14 23:58:14 | CLOSED | sorin-ionescu | <a href='https://github.com/sorin-ionescu/prezto/issues/197'>https://github.com/sorin-ionescu/prezto/issues/197</a> |           183|
-| javan/whenever       | Rake jobs don't run in some environments | 2009-06-15 16:22:10 | CLOSED | NA            | <a href='https://github.com/javan/whenever/issues/10'>https://github.com/javan/whenever/issues/10</a>               |             5|
+| repo                          | title                           | created\_at         | state  | author        | url                                                                                                                               |  no\_comments|
+|:------------------------------|:--------------------------------|:--------------------|:-------|:--------------|:----------------------------------------------------------------------------------------------------------------------------------|-------------:|
+| PredictiveEcology/SpaDES.core | robustObjectSize                | 2018-03-20 02:14:01 | OPEN   | eliotmcintire | <a href='https://github.com/PredictiveEcology/SpaDES.core/pull/54'>https://github.com/PredictiveEcology/SpaDES.core/pull/54</a>   |             2|
+| uribo/jpndistrict             | Follow up sf (0.6-0) update     | 2018-03-20 00:11:46 | MERGED | uribo         | <a href='https://github.com/uribo/jpndistrict/pull/11'>https://github.com/uribo/jpndistrict/pull/11</a>                           |             6|
+| ptl93/AEDA                    | Tle cluster                     | 2018-03-18 12:39:58 | MERGED | ptl93         | <a href='https://github.com/ptl93/AEDA/pull/33'>https://github.com/ptl93/AEDA/pull/33</a>                                         |             7|
+| HealthCatalyst/healthcareai-r | Continuous integration set up   | 2018-03-16 20:34:00 | MERGED | michaellevy   | <a href='https://github.com/HealthCatalyst/healthcareai-r/pull/947'>https://github.com/HealthCatalyst/healthcareai-r/pull/947</a> |            13|
+| HealthCatalyst/healthcareai-r | Travis and AppVeyor set up      | 2018-03-16 17:32:30 | CLOSED | michaellevy   | <a href='https://github.com/HealthCatalyst/healthcareai-r/pull/944'>https://github.com/HealthCatalyst/healthcareai-r/pull/944</a> |            11|
+| ropensci/drake                | Add `reduce_plan()`             | 2018-03-16 01:43:13 | MERGED | wlandau       | <a href='https://github.com/ropensci/drake/pull/327'>https://github.com/ropensci/drake/pull/327</a>                               |             2|
+| PredictiveEcology/SpaDES.core | Fix when alsoExtract is NULL    | 2018-03-15 21:40:36 | MERGED | ygc2l         | <a href='https://github.com/PredictiveEcology/SpaDES.core/pull/53'>https://github.com/PredictiveEcology/SpaDES.core/pull/53</a>   |             1|
+| Azure/doAzureParallel         | Added optional retry count flag | 2018-03-15 19:33:35 | MERGED | brnleehng     | <a href='https://github.com/Azure/doAzureParallel/pull/235'>https://github.com/Azure/doAzureParallel/pull/235</a>                 |             2|
+| HealthCatalyst/healthcareai-r | Mikem 901 readdata              | 2018-03-12 19:39:54 | MERGED | mmastand      | <a href='https://github.com/HealthCatalyst/healthcareai-r/pull/934'>https://github.com/HealthCatalyst/healthcareai-r/pull/934</a> |            28|
+| stianlagstad/chimeraviz       | Adds lintr test                 | 2018-03-11 00:00:51 | CLOSED | stianlagstad  | <a href='https://github.com/stianlagstad/chimeraviz/pull/40'>https://github.com/stianlagstad/chimeraviz/pull/40</a>               |             2|
 
 Meta
 ----

@@ -4,10 +4,12 @@
 \alias{spy}
 \title{Get latest issues where an user commented}
 \usage{
-spy(user)
+spy(user, type = "Issue")
 }
 \arguments{
 \item{user}{username}
+
+\item{type}{"Issue" or "PullRequest"}
 }
 \value{
 tibble
@@ -16,5 +18,6 @@ tibble
 Get latest issues where an user commented
 }
 \examples{
-spy("github")
+https://github.com/lintr-bot
+spy("lintr-bot")
 }
