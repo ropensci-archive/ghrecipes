@@ -113,7 +113,7 @@ get_issue_thread <- function(owner, repo, issue_id){
   # bind to comments and spread label
   if(nrow(res) > 0){
     # easier this way
-    if(!"closed_at" %in% names(res)|all(is.na(res$closed_at))){
+    if(!"closed_at" %in% names(res)|all(suppressWarnings(is.null(res$closed_at)))){
       res <- dplyr::mutate(res, closed_at = "9999-01-01")
     }
 
@@ -138,6 +138,8 @@ get_issue_thread <- function(owner, repo, issue_id){
   }
 
   res$comment_url[1] <- paste0("https://github.com/", owner, "/", repo, "/issues/", issue_id)
+  res$owner <- owner
+  res$repo <- repo
   unique(res)
 
 }
