@@ -4,7 +4,8 @@
 \alias{spy}
 \title{Get latest issues where an user commented}
 \usage{
-spy(user, type = "Issue")
+spy(user, type = "Issue", updated_after = as.character(Sys.Date() - 10),
+  updated_before = as.character(Sys.Date()))
 }
 \arguments{
 \item{user}{username}

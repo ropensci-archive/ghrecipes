@@ -127,6 +127,7 @@ get_issue_thread <- function(owner, repo, issue_id){
         stringr::str_replace_all('\\\"', '') %>%
         list()
       res$labels <- labels
+      res <- tidyr::unnest(res, labels)
       res <- dplyr::mutate(res, value = TRUE)
       res <- tidyr::spread(unique(res), labels, value, fill = FALSE)
     }
