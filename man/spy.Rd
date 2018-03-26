@@ -11,6 +11,12 @@ spy(user, type = "Issue", updated_after = as.character(Sys.Date() - 10),
 \item{user}{username}
 
 \item{type}{"Issue" or "PullRequest"}
+
+\item{updated_after}{date after which the issue or pull request should have
+been updated(YYYY-MM-DD)}
+
+\item{updated_before}{date before which the issue or pull request should have
+been updated(YYYY-MM-DD)}
 }
 \value{
 tibble

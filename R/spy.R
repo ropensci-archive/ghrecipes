@@ -2,6 +2,10 @@
 #'
 #' @param user username
 #' @param type "Issue" or "PullRequest"
+#' @param updated_after date after which the issue or pull request should have
+#' been updated(YYYY-MM-DD)
+#' @param updated_before date before which the issue or pull request should have
+#' been updated(YYYY-MM-DD)
 #'
 #' @return tibble
 #' @export
