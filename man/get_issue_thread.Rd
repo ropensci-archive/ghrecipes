@@ -22,3 +22,6 @@ body of each comment, comment_url, one column per label, issue.
 \description{
 Get a whole issue thread
 }
+\examples{
+get_issue_thread("ropensci", "onboarding", 175)
+}

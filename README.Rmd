@@ -33,9 +33,6 @@ You can install ghrecipes from GitHub with:
 devtools::install_github("maelle/ghrecipes")
 ```
 
-## Notes on use
-
-* See a very basic use case [here](http://www.masalmon.eu/2018/03/04/hrbrpkgs/).
 
 ## Examples
 
@@ -46,6 +43,14 @@ ghrecipes::spy("lintr-bot", type = "Issue")
 convos <- ghrecipes::spy("lintr-bot", type = "PullRequest")
 knitr::kable(convos[1:10,])
 ```
+
+
+## External use cases
+
+* ["hrbrpkgs: list Bob Rudis' packages"](http://www.masalmon.eu/2018/03/04/hrbrpkgs/).
+
+* ["Lintr Bot, lintr's Hester egg"](http://www.masalmon.eu/2018/03/30/lintr-bot/)
+
 
 ## Meta
 

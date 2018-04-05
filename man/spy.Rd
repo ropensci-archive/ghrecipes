@@ -24,6 +24,11 @@ tibble
 \description{
 Get latest issues where an user commented
 }
+\details{
+Note that depending on your GITHUB_PAT score, you might get results for
+private repositories, so think a bit before publishing the results of a call to
+this function!
+}
 \examples{
 # https://github.com/lintr-bot
 spy("lintr-bot")

@@ -8,6 +8,9 @@
 #' been updated(YYYY-MM-DD)
 #'
 #' @return tibble
+#' @details Note that depending on your GITHUB_PAT score, you might get results for
+#' private repositories, so think a bit before publishing the results of a call to
+#' this function!
 #' @export
 #'
 #' @examples
@@ -17,7 +20,7 @@ spy <- function(user, type = "Issue",
                 updated_after = as.character(Sys.Date() - 10),
                 updated_before = as.character(Sys.Date())){
   query <- paste0('{
-  search(query: "commenter:',user, ' updated:',
+  search(query: "involves:',user, ' updated:',
   updated_after,'..',updated_before,'", type: ISSUE, first: 100, after: %s) {
     edges {
                   node {
@@ -76,7 +79,8 @@ cursor
     info <- unique(output[, c("owner", "repo", "id", "url")])
     threads <- purrr::pmap_df(list(info$owner, info$repo, info$id),
                               get_issue_thread)
-    threads <- threads[threads$author == user,]
+    threads <- threads[threads$author == user|grepl(user, threads$assignee)|
+                         grepl(user, threads$body),]
     output <- dplyr::left_join(info, threads, by = c("repo", "owner",
                                                        "id" = "issue"))
   }

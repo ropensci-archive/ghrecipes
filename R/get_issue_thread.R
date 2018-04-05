@@ -11,6 +11,7 @@
 #' @export
 #'
 #' @examples
+#' get_issue_thread("ropensci", "onboarding", 175)
 get_issue_thread <- function(owner, repo, issue_id){
   query <- paste0('{
                              repository(owner: "', owner,'", name: "', repo,'") {
