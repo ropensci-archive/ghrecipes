@@ -48,6 +48,7 @@ get_description <- function(owner, repo, branch = "master"){
                  branch = branch,
                  title = description$get("Title"),
                  maintainer = description$get_maintainer(),
+                 authors = description$get_authors(),
                  dependencies = list(description$get_deps()),
                  system_requirements = description$get("SystemRequirements"),
                  description = description$get("Description"))
