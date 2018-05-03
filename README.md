@@ -5,7 +5,7 @@
 has not yet been a stable, usable release suitable for the
 public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 [![Travis build
-status](https://travis-ci.org/ropenscilabs/ghrecipes.svg?branch=master)](https://travis-ci.org/ropenscilabs/ghrecipe)
+status](https://travis-ci.org/ropenscilabs/ghrecipes.svg?branch=master)](https://travis-ci.org/ropenscilabs/ghrecipes)
 [![Coverage
 status](https://codecov.io/gh/ropenscilabs/ghrecipes/branch/master/graph/badge.svg)](https://codecov.io/github/ropenscilabs/ghrecipes?branch=master)
 
