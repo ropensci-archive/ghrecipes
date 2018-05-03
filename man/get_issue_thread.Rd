@@ -7,9 +7,9 @@
 get_issue_thread(owner, repo, issue_id)
 }
 \arguments{
-\item{owner}{owner of the repo}
+\item{owner}{owner of the repo, string}
 
-\item{repo}{repo}
+\item{repo}{repo name, string}
 
 \item{issue_id}{issue ID}
 }

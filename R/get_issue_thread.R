@@ -1,7 +1,6 @@
 #' Get a whole issue thread
 #'
-#' @param owner owner of the repo
-#' @param repo repo
+#' @inheritParams get_contents
 #' @param issue_id issue ID
 #'
 #' @return A data.frame with one row per comment and
