@@ -5,9 +5,7 @@
 has not yet been a stable, usable release suitable for the
 public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 [![Travis build
-status](https://travis-ci.org/ropenscilabs/ghrecipes.svg?branch=master)](https://travis-ci.org/ropenscilabs/ghrecipes)
-[![Build
-status](https://ci.appveyor.com/api/projects/status/8bh3hpjevms1rni0?svg=true)](https://ci.appveyor.com/project/ropensci/ghrecipes)
+status](https://travis-ci.org/ropenscilabs/ghrecipes.svg?branch=master)](https://travis-ci.org/ropenscilabs/ghrecipe)
 [![Coverage
 status](https://codecov.io/gh/ropenscilabs/ghrecipes/branch/master/graph/badge.svg)](https://codecov.io/github/ropenscilabs/ghrecipes?branch=master)
 
@@ -78,8 +76,8 @@ knitr::kable(convos[1:10,])
     onboarding”](https://ropensci.org/blog/2018/04/26/rectangling-onboarding/)
     by [Maëlle Salmon](https://github.com/maelle/).
 
-Add your use case to the list by \[opening an
-issue\]\!(<https://github.com/ropenscilabs/ghrecipes/issues/new>)
+Add your use case to the list by [opening an
+issue](https://github.com/ropenscilabs/ghrecipes/issues/new) \!
 
 ## Nice words
 
