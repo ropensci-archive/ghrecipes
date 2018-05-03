@@ -53,7 +53,12 @@ knitr::kable(convos[1:10,])
 
 * ["Rectangling onboarding"](https://ropensci.org/blog/2018/04/26/rectangling-onboarding/) by [Maëlle Salmon](https://github.com/maelle/).
 
-Add your use case to the list by [opening an issue!](https://github.com/ropenscilabs/ghrecipes/issues/new).
+Add your use case to the list by [opening an issue]!(https://github.com/ropenscilabs/ghrecipes/issues/new)
+
+## Nice words
+
+<blockquote class="twitter-tweet" data-lang="ca"><p lang="en" dir="ltr">Both the package actual use and its source code have been very useful to me in understanding graphQL and the Github API. Thanks <a href="https://twitter.com/ma_salmon?ref_src=twsrc%5Etfw">@ma_salmon</a>!  <a href="https://t.co/i8KUAMGfsn">https://t.co/i8KUAMGfsn</a></p>&mdash; Christian Minich (@ChristianNolan) <a href="https://twitter.com/ChristianNolan/status/990686685682962434?ref_src=twsrc%5Etfw">29 d’abril de 2018</a></blockquote>
+
 
 ## Meta
 
