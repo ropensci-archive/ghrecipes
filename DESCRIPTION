@@ -34,3 +34,5 @@ Suggests:
 Remotes:
     r-lib/desc,
     ropensci/ghql
+URL: https://github.com/ropenscilabs/ghrecipes
+BugReports: https://github.com/ropenscilabs/ghrecipes/issues
