@@ -22,6 +22,20 @@ get_repos <- function(owner){
                   description
                   isFork
 
+                  ref(qualifiedName: "master") {
+      target {
+                  ... on Commit {
+                  history(first: 1) {
+                  edges {
+                  node {
+                  committedDate
+                  }
+                  }
+                  }
+                  }
+}
+}
+
 }
 edges{
 cursor
@@ -39,11 +53,13 @@ hasNextPage
             created_at: .createdAt,
             updated_at: .updatedAt,
             description: .description,
-            is_fork: .isFork}")  %>%
+            is_fork: .isFork,
+            latest_commit: .ref.target.history.edges[].node.committedDate}")  %>%
     jqr::combine() %>% # single json file
     jsonlite::fromJSON() %>%
     tibble::as_tibble() %>%
     dplyr::mutate(name = stringr::str_replace_all(.data$name, '\\\"', ''),
                   created_at = anytime::anytime(.data$created_at),
-                  updated_at = anytime::anytime(.data$updated_at))
+                  updated_at = anytime::anytime(.data$updated_at),
+                  latest_commit = anytime::anytime(.data$latest_commit))
   }
