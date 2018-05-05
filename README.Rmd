@@ -36,7 +36,7 @@ devtools::install_github("ropenscilabs/ghrecipes")
 
 ## Examples
 
-Don't miss conversations by your favorite developpers, or comments by your favorite [styling bot](https://github.com/lintr-bot). In that function, only the latest results are returned, and an issue can be a PR.
+Don't miss conversations by your favorite developers or comments by your favorite [styling bot](https://github.com/lintr-bot). In that function, only the latest results are returned, and an issue can be a PR.
 
 ```{r}
 ghrecipes::spy("lintr-bot", type = "Issue")
