@@ -12,7 +12,7 @@
 get_collaborators <- function(owner, repo){
   query <- paste0('{
                   repository(owner: "', owner, '", name: "', repo,'") {
-                  collaborators(first: 100, affiliation: ALL) {
+                  collaborators(first: 100, affiliation: ALL, after: %s) {
       edges {
                   permission
                   node {
