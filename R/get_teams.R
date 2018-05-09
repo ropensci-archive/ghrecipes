@@ -45,7 +45,6 @@ hasNextPage
     jqr::combine() %>%
     jsonlite::fromJSON() %>%
     tibble::as_tibble()
-  collaborators$repo <- repo
   collaborators$owner <- owner
   collaborators
 
