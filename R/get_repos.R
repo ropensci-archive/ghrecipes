@@ -21,7 +21,7 @@ get_repos <- function(owner){
                   updatedAt
                   description
                   isFork
-
+                  isArchived
                   ref(qualifiedName: "master") {
       target {
                   ... on Commit {
@@ -54,6 +54,7 @@ hasNextPage
             updated_at: .updatedAt,
             description: .description,
             is_fork: .isFork,
+            is_archived: .isArchived,
             latest_commit: .ref.target.history.edges[].node.committedDate}")  %>%
     jqr::combine() %>% # single json file
     jsonlite::fromJSON() %>%
