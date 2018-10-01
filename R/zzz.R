@@ -10,6 +10,10 @@ iterate <- function(query) {
     qry <- ghql::Query$new()
     qry$query('foobar', sprintf(query, last_cursor))
     res <- create_client()$exec(qry$queries$foobar)
+    if(stringr::str_detect(res, "\\{\"data\":null,\"errors\"")) {
+      res_json <- jsonlite::fromJSON(res)
+      stop(res_json$errors$message)
+    }
     last_cursor <- jqr::jq(res, "[..|.cursor?|select(.!=null)][-1]")
     hasNextPage <- as.logical(jqr::jq(res, "..|.hasNextPage?|select(.!=null)"))
     out <- paste0(out, res)
