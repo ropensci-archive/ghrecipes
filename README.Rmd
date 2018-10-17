@@ -33,6 +33,17 @@ You can install ghrecipes from GitHub with:
 devtools::install_github("ropenscilabs/ghrecipes")
 ```
 
+## Tokens
+
+To access GitHub, `ghrecipes` looks for tokens stored in the system environment in the following order of precedence:
+
+1. GITHUB_GRAPHQL_TOKEN
+2. GITHUB_TOKEN
+3. GITHUB_PAT
+
+Most functions require only the `repo` scope. However, `get_teams()` requires either `read:org` or `read:discussion` scopes, and `get_collaborators()` requires push access to the repository of interest.
+
+For step-by-step guidance on getting and storing a GitHub token, refer to the [instructions](https://usethis.r-lib.org/articles/articles/usethis-setup.html#get-and-store-a-github-personal-access-token) in the `usethis` package.
 
 ## Examples
 

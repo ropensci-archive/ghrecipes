@@ -35,6 +35,25 @@ You can install ghrecipes from GitHub with:
 devtools::install_github("ropenscilabs/ghrecipes")
 ```
 
+## Tokens
+
+To access GitHub, `ghrecipes` looks for tokens stored in the system
+environment in the following order of precedence:
+
+1.  GITHUB\_GRAPHQL\_TOKEN
+2.  GITHUB\_TOKEN
+3.  GITHUB\_PAT
+
+Most functions require only the `repo` scope. However, `get_teams()`
+requires either `read:org` or `read:discussion` scopes, and
+`get_collaborators()` requires push access to the repository of
+interest.
+
+For step-by-step guidance on getting and storing a GitHub token, refer
+to the
+[instructions](https://usethis.r-lib.org/articles/articles/usethis-setup.html#get-and-store-a-github-personal-access-token)
+in the `usethis` package.
+
 ## Examples
 
 Don’t miss conversations by your favorite developers or comments by your
@@ -48,18 +67,18 @@ convos <- ghrecipes::spy("lintr-bot", type = "PullRequest")
 knitr::kable(convos[1:10,])
 ```
 
-| owner             | repo            | title                                                     | created\_at         | state  | author       | url                                                                                                                               | no\_comments |   id |
-| :---------------- | :-------------- | :-------------------------------------------------------- | :------------------ | :----- | :----------- | :-------------------------------------------------------------------------------------------------------------------------------- | -----------: | ---: |
-| hbc               | bcbioRNASeq     | v0.2.3                                                    | 2018-05-04 02:43:07 | OPEN   | mjsteinbaugh | <a href='https://github.com/hbc/bcbioRNASeq/pull/96'>https://github.com/hbc/bcbioRNASeq/pull/96</a>                               |            5 |   96 |
-| hbc               | bcbioBase       | v0.2.10                                                   | 2018-05-03 14:33:45 | MERGED | mjsteinbaugh | <a href='https://github.com/hbc/bcbioBase/pull/34'>https://github.com/hbc/bcbioBase/pull/34</a>                                   |            3 |   34 |
-| hbc               | bcbioSingleCell | v0.1.5                                                    | 2018-05-02 16:26:31 | MERGED | mjsteinbaugh | <a href='https://github.com/hbc/bcbioSingleCell/pull/51'>https://github.com/hbc/bcbioSingleCell/pull/51</a>                       |            5 |   51 |
-| PredictiveEcology | SpaDES.tools    | Fixed issue with empty CHECKSUMS.txt                      | 2018-04-27 06:43:49 | MERGED | CeresBarros  | <a href='https://github.com/PredictiveEcology/SpaDES.tools/pull/28'>https://github.com/PredictiveEcology/SpaDES.tools/pull/28</a> |            2 |   28 |
-| Azure             | doAzureParallel | Enable AAD and VNet Support                               | 2018-04-17 18:50:14 | MERGED | brnleehng    | <a href='https://github.com/Azure/doAzureParallel/pull/252'>https://github.com/Azure/doAzureParallel/pull/252</a>                 |            3 |  252 |
-| ropensci          | drake           | add arg ‘sanitize\_targets’ to ‘build\_drake\_graph()’    | 2018-03-24 22:03:28 | CLOSED | ChrisMuir    | <a href='https://github.com/ropensci/drake/pull/342'>https://github.com/ropensci/drake/pull/342</a>                               |            6 |  342 |
-| mlr-org           | mlr             | Oneclass r learner h2o - for INTERNAL REVIEW - DONT MERGE | 2017-05-24 14:47:05 | OPEN   | berndbischl  | <a href='https://github.com/mlr-org/mlr/pull/1807'>https://github.com/mlr-org/mlr/pull/1807</a>                                   |            2 | 1807 |
-| NA                | NA              | NA                                                        | NA                  | NA     | NA           | NA                                                                                                                                |           NA |   NA |
-| NA                | NA              | NA                                                        | NA                  | NA     | NA           | NA                                                                                                                                |           NA |   NA |
-| NA                | NA              | NA                                                        | NA                  | NA     | NA           | NA                                                                                                                                |           NA |   NA |
+| owner             | repo         | title                         | created\_at         | state  | author   | url                                                                                                                               | no\_comments |  id |
+| :---------------- | :----------- | :---------------------------- | :------------------ | :----- | :------- | :-------------------------------------------------------------------------------------------------------------------------------- | -----------: | --: |
+| PredictiveEcology | SpaDES.tools | move RandomFields to Suggests | 2018-09-18 23:04:49 | MERGED | achubaty | <a href='https://github.com/PredictiveEcology/SpaDES.tools/pull/50'>https://github.com/PredictiveEcology/SpaDES.tools/pull/50</a> |            1 |  50 |
+| PredictiveEcology | SpaDES.tools | rasterizeReduced uses crs     | 2018-09-04 20:40:18 | MERGED | achubaty | <a href='https://github.com/PredictiveEcology/SpaDES.tools/pull/49'>https://github.com/PredictiveEcology/SpaDES.tools/pull/49</a> |            1 |  49 |
+| bokeh             | rbokeh       | Update to 0.12.5              | 2017-06-07 20:11:51 | OPEN   | hafen    | <a href='https://github.com/bokeh/rbokeh/pull/217'>https://github.com/bokeh/rbokeh/pull/217</a>                                   |            7 | 217 |
+| NA                | NA           | NA                            | NA                  | NA     | NA       | NA                                                                                                                                |           NA |  NA |
+| NA                | NA           | NA                            | NA                  | NA     | NA       | NA                                                                                                                                |           NA |  NA |
+| NA                | NA           | NA                            | NA                  | NA     | NA       | NA                                                                                                                                |           NA |  NA |
+| NA                | NA           | NA                            | NA                  | NA     | NA       | NA                                                                                                                                |           NA |  NA |
+| NA                | NA           | NA                            | NA                  | NA     | NA       | NA                                                                                                                                |           NA |  NA |
+| NA                | NA           | NA                            | NA                  | NA     | NA       | NA                                                                                                                                |           NA |  NA |
+| NA                | NA           | NA                            | NA                  | NA     | NA       | NA                                                                                                                                |           NA |  NA |
 
 ## Use cases in the wild
 
