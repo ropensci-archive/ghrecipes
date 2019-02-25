@@ -1,15 +1,16 @@
 #' Get repositories of one owner
 #'
 #' @param owner string
+#' @param return_private logical, return private repos?
 #'
 #' @return tibble with name (owner/repo), creation time, latest update time,
-#' description and is_fork.
+#' description, is_fork, is_archived, and is_private.
 #' @export
 #'
 #' @examples
 #' get_repos("jeroen")
 #' get_repos("ropensci")
-get_repos <- function(owner){
+get_repos <- function(owner, return_private = FALSE){
 
   query <- paste0('query{
                   repositoryOwner(login: "', owner, '"){
@@ -22,6 +23,7 @@ get_repos <- function(owner){
                   description
                   isFork
                   isArchived
+                  isPrivate
                   ref(qualifiedName: "master") {
       target {
                   ... on Commit {
@@ -47,7 +49,7 @@ hasNextPage
 }
 }
 ')
-  iterate(query) %>%
+  res <- iterate(query) %>%
     jqr::jq(".data.repositoryOwner.repositories.nodes[]") %>%
     jqr::jq("{name: .nameWithOwner,
             created_at: .createdAt,
@@ -55,6 +57,7 @@ hasNextPage
             description: .description,
             is_fork: .isFork,
             is_archived: .isArchived,
+            is_private: .isPrivate,
             latest_commit: .ref.target.history.edges[].node.committedDate}")  %>%
     jqr::combine() %>% # single json file
     jsonlite::fromJSON() %>%
@@ -63,4 +66,9 @@ hasNextPage
                   created_at = anytime::anytime(.data$created_at),
                   updated_at = anytime::anytime(.data$updated_at),
                   latest_commit = anytime::anytime(.data$latest_commit))
+    if(!return_private){
+      res <- dplyr::filter(res, !is_private)
+    }
+
+  res
   }

@@ -4,14 +4,16 @@
 \alias{get_repos}
 \title{Get repositories of one owner}
 \usage{
-get_repos(owner)
+get_repos(owner, return_private = FALSE)
 }
 \arguments{
 \item{owner}{string}
+
+\item{return_private}{logical, return private repos?}
 }
 \value{
 tibble with name (owner/repo), creation time, latest update time,
-description and is_fork.
+description, is_fork, is_archived, and is_private.
 }
 \description{
 Get repositories of one owner
