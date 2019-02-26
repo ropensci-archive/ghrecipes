@@ -2,6 +2,7 @@
 
 export(get_collaborators)
 export(get_contents)
+export(get_contributions)
 export(get_description)
 export(get_file)
 export(get_issue_authors)
