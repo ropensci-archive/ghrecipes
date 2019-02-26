@@ -6,7 +6,8 @@ Authors@R: c(person("Maëlle", "Salmon", email = "maelle.salmon@yahoo.se", role 
              person("Scott", "Chamberlain", role = c("aut")),
              person("rOpenSci", role = c("fnd")),
              person("Locke Data", role = c("fnd")),
-             person("Irene", "Steves", role = c("ctb")))
+             person("Irene", "Steves", role = c("ctb")), 
+             person("Joseph", "Stachelek", role = c("ctb")))
 Description: Uses the ghql package and jqr to get some common data from Github V4 API.
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -28,7 +29,7 @@ Imports:
     rlang,
     tidyr,
     zoo
-RoxygenNote: 6.0.1.9000
+RoxygenNote: 6.1.1
 Suggests: 
     testthat,
     covr
