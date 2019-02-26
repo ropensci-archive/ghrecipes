@@ -4,12 +4,12 @@
 \alias{get_repos}
 \title{Get repositories of one owner}
 \usage{
-get_repos(owner, return_private = FALSE)
+get_repos(owner, privacy = "PUBLIC")
 }
 \arguments{
 \item{owner}{string}
 
-\item{return_private}{logical, return private repos?}
+\item{privacy}{string, one of "PUBLIC", "PRIVATE", or "null" for both.}
 }
 \value{
 tibble with name (owner/repo), creation time, latest update time,

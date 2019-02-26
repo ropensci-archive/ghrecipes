@@ -1,7 +1,7 @@
 #' Get repositories of one owner
 #'
 #' @param owner string
-#' @param return_private logical, return private repos?
+#' @param privacy string, one of "PUBLIC", "PRIVATE", or "null" for both.
 #'
 #' @return tibble with name (owner/repo), creation time, latest update time,
 #' description, is_fork, is_archived, and is_private.
@@ -10,11 +10,16 @@
 #' @examples
 #' get_repos("jeroen")
 #' get_repos("ropensci")
-get_repos <- function(owner, return_private = FALSE){
-
+get_repos <- function(owner, privacy = "PUBLIC"){
+  if(all(c("PRIVATE", "PUBLIC") %in% privacy)){
+    privacy <- "null"
+  }
+  if(!(privacy %in% c("PRIVATE", "PUBLIC", "null"))){
+    stop(paste0("privacy must be one of: PRIVATE, PUBLIC, null"))
+  }
   query <- paste0('query{
                   repositoryOwner(login: "', owner, '"){
-                  repositories(first:100, after: %s){
+                  repositories(first:100, privacy: ', privacy, ', after: %s){
                       nodes {
 
                   nameWithOwner
@@ -66,9 +71,6 @@ hasNextPage
                   created_at = anytime::anytime(.data$created_at),
                   updated_at = anytime::anytime(.data$updated_at),
                   latest_commit = anytime::anytime(.data$latest_commit))
-    if(!return_private){
-      res <- dplyr::filter(res, !is_private)
-    }
 
   res
   }
