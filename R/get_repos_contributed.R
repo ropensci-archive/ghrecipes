@@ -1,14 +1,15 @@
-#' Get contributions by a given account
+#' Get repos contributed to by a given account
 #'
 #' @inheritParams get_repos
+#' @inheritParams spy
 #'
-#' @return tibble with name (owner/repo), description, primary language, stargazer count, is_fork, is_privatem, and is_created.
+#' @return tibble with name (owner/repo), description, primary language, stargazer count, is_fork, is_private, and is_created.
 #' @export
 #'
 #' @examples \dontrun{
-#' cb <- get_contributions()
+#' cb <- get_repos_contributed()
 #' }
-get_contributions <- function(privacy = "PUBLIC"){
+get_repos_contributed <- function(user, privacy = "PUBLIC"){
   if(all(c("PRIVATE", "PUBLIC") %in% privacy)){
     privacy <- "null"
   }
