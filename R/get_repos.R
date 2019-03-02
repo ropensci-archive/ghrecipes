@@ -26,6 +26,13 @@ get_repos <- function(owner, privacy = "PUBLIC"){
                   createdAt
                   updatedAt
                   description
+                  primaryLanguage {
+                    name
+                    color
+                  }
+                  stargazers {
+                    totalCount
+                  }
                   isFork
                   isArchived
                   isPrivate
@@ -60,6 +67,8 @@ hasNextPage
             created_at: .createdAt,
             updated_at: .updatedAt,
             description: .description,
+            language: .primaryLanguage,
+            stargazers_count: .stargazers,
             is_fork: .isFork,
             is_archived: .isArchived,
             is_private: .isPrivate,
