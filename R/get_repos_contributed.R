@@ -7,7 +7,7 @@
 #' @export
 #'
 #' @examples \dontrun{
-#' cb <- get_repos_contributed()
+#' cb <- get_repos_contributed("jsta")
 #' }
 get_repos_contributed <- function(user, privacy = "PUBLIC"){
   if(all(c("PRIVATE", "PUBLIC") %in% privacy)){
@@ -17,7 +17,7 @@ get_repos_contributed <- function(user, privacy = "PUBLIC"){
     stop(paste0("privacy must be one of: PRIVATE, PUBLIC, null"))
   }
   query <- paste0('{
-  viewer {
+  user(login:', user,  ') {
     repositoriesContributedTo(first: 100, privacy: ', privacy, ', contributionTypes: [COMMIT, REPOSITORY]) {
       nodes {
         nameWithOwner
@@ -40,7 +40,7 @@ get_repos_contributed <- function(user, privacy = "PUBLIC"){
   }
  }')
   iterate(query) %>%
-    jqr::jq(".data.viewer.repositoriesContributedTo.nodes[]") %>%
+    jqr::jq(".data.user.repositoriesContributedTo.nodes[]") %>%
     jqr::jq("{name: .nameWithOwner,
             description: .description,
             language: .primaryLanguage,
