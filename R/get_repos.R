@@ -26,6 +26,13 @@ get_repos <- function(owner, privacy = "PUBLIC"){
                   createdAt
                   updatedAt
                   description
+                  primaryLanguage {
+                    name
+                    color
+                  }
+                  stargazers {
+                    totalCount
+                  }
                   isFork
                   isArchived
                   isPrivate
@@ -54,16 +61,18 @@ hasNextPage
 }
 }
 ')
-  res <- iterate(query) %>%
-    jqr::jq(".data.repositoryOwner.repositories.nodes[]") %>%
-    jqr::jq("{name: .nameWithOwner,
-            created_at: .createdAt,
-            updated_at: .updatedAt,
-            description: .description,
-            is_fork: .isFork,
-            is_archived: .isArchived,
-            is_private: .isPrivate,
-            latest_commit: .ref.target.history.edges[].node.committedDate}")  %>%
+
+  parse_response <- function(response){
+    jqr::jq(response, "{name: .nameWithOwner,
+              created_at: .createdAt,
+              updated_at: .updatedAt,
+              description: .description,
+              language: .primaryLanguage,
+              stargazers_count: .stargazers,
+              is_fork: .isFork,
+              is_archived: .isArchived,
+              is_private: .isPrivate,
+              latest_commit: .ref.target.history.edges[].node.committedDate}")  %>%
     jqr::combine() %>% # single json file
     jsonlite::fromJSON() %>%
     tibble::as_tibble() %>%
@@ -71,6 +80,12 @@ hasNextPage
                   created_at = anytime::anytime(.data$created_at),
                   updated_at = anytime::anytime(.data$updated_at),
                   latest_commit = anytime::anytime(.data$latest_commit))
+  }
 
-  res
+  iterate(query) %>%
+    jqr::jq(".data.repositoryOwner.repositories.nodes[]") %>%
+    {`if`(length(.) == 0,
+          message("No repos found..."),
+          parse_response(.))}
+
   }

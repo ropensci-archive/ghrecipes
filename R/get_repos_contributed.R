@@ -39,17 +39,24 @@ get_repos_contributed <- function(user, privacy = "PUBLIC"){
     }
   }
  }')
-  iterate(query) %>%
-    jqr::jq(".data.user.repositoriesContributedTo.nodes[]") %>%
-    jqr::jq("{name: .nameWithOwner,
+
+  parse_response <- function(response){
+    jqr::jq(response, "{name: .nameWithOwner,
             description: .description,
             language: .primaryLanguage,
             stargazers_count: .stargazers,
             is_fork: .isFork,
             is_private: .isPrivate,
             is_archived: .isArchived}")  %>%
-    jqr::combine() %>% # single json file
-    jsonlite::fromJSON() %>%
-    tibble::as_tibble() %>%
-    dplyr::mutate(name = stringr::str_replace_all(.data$name, '\\\"', ''))
+      jqr::combine() %>% # single json file
+      jsonlite::fromJSON() %>%
+      tibble::as_tibble() %>%
+      dplyr::mutate(name = stringr::str_replace_all(.data$name, '\\\"', ''))
+  }
+
+  iterate(query) %>%
+    jqr::jq(".data.user.repositoriesContributedTo.nodes[]") %>%
+    {`if`(length(.) == 0,
+         message("No contributed repos found..."),
+         parse_response(.))}
 }
