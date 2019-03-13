@@ -16,6 +16,9 @@ iterate <- function(query) {
     }
     last_cursor <- jqr::jq(res, "[..|.cursor?|select(.!=null)][-1]")
     hasNextPage <- as.logical(jqr::jq(res, "..|.hasNextPage?|select(.!=null)"))
+    if(length(hasNextPage) == 0){
+      stop("Invalid query detected. Does the specified owner and/or repo exist?")
+    }
     out <- paste0(out, res)
   }
   return(out)
