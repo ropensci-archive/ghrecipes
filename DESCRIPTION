@@ -7,7 +7,8 @@ Authors@R: c(person("Maëlle", "Salmon", email = "maelle.salmon@yahoo.se", role 
              person("rOpenSci", role = c("fnd")),
              person("Locke Data", role = c("fnd")),
              person("Irene", "Steves", role = c("ctb")), 
-             person("Joseph", "Stachelek", role = c("ctb")))
+             person("Joseph", "Stachelek", role = c("ctb")),
+             person("Mark", "Padgham", role = c("ctb")))
 Description: Uses the ghql package and jqr to get some common data from Github V4 API.
 License: MIT + file LICENSE
 Encoding: UTF-8
