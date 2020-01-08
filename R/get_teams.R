@@ -13,7 +13,7 @@
 get_teams <- function(owner){
   query <- paste0('{
                   organization(login: "', owner,'") {
-                  teams(first: 100, after: %s) {
+                  teams(first: 100 %s) {
                    edges {
         node {
                   name

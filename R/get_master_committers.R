@@ -12,7 +12,7 @@ get_master_committers <- function(repo, owner){
                    ref(qualifiedName:"refs/heads/master") {
       target {
                   ... on Commit {
-                  history(first: 100, after: %s) {
+                  history(first: 100 %s) {
                   edges {
                   node {
                   author {

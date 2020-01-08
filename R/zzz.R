@@ -15,6 +15,7 @@ iterate <- function(query) {
       stop(res_json$errors$message)
     }
     last_cursor <- jqr::jq(res, "[..|.cursor?|select(.!=null)][-1]")
+    last_cursor <- paste0 (", after: ", last_cursor)
     hasNextPage <- as.logical(jqr::jq(res, "..|.hasNextPage?|select(.!=null)"))
     if(length(hasNextPage) == 0){
       stop("Invalid query detected. Does the specified owner and/or repo exist?")
