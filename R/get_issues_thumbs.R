@@ -12,7 +12,7 @@
 get_issues_thumbs <- function(owner, repo, no_null = TRUE){
   query <- paste0('{
   repository(owner: "',owner,'", name: "',repo,'") {
-                      issues(first: 100, states:OPEN, after: %s) {
+                      issues(first: 100, states:OPEN %s) {
                       edges {
                   node {
                   number

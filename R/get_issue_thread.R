@@ -38,7 +38,7 @@ get_issue_thread <- function(owner, repo, issue_id){
                   login
                   }
                   body
-                  comments(first: 100, after: %s) {
+                  comments(first: 100 %s) {
                   edges {
                   node {
                   body

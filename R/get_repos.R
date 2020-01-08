@@ -19,7 +19,7 @@ get_repos <- function(owner, privacy = "PUBLIC"){
   }
   query <- paste0('query{
                   repositoryOwner(login: "', owner, '"){
-                  repositories(first:100, privacy: ', privacy, ', after: %s){
+                  repositories(first:100, privacy: ', privacy, ' %s){
                       nodes {
 
                   nameWithOwner

@@ -21,7 +21,7 @@ spy <- function(user, type = "Issue",
                 updated_before = as.character(Sys.Date())){
   query <- paste0('{
   search(query: "involves:',user, ' updated:',
-  updated_after,'..',updated_before,'", type: ISSUE, first: 100, after: %s) {
+  updated_after,'..',updated_before,'", type: ISSUE, first: 100 %s) {
     edges {
                   node {
                   ... on ',type,' {
