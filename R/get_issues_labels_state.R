@@ -10,7 +10,7 @@
 get_issue_labels_state <- function(owner, repo){
   query <- paste0('{
                   repository(owner: "', owner, '", name: "', repo,'") {
-                  issues(first: 100, after: %s) {
+                  issues(first: 100 %s) {
                   edges {
                   node {
                     number
