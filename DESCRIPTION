@@ -15,7 +15,7 @@ Encoding: UTF-8
 LazyData: true
 Imports: 
     jqr,
-    ghql,
+    ghql (>= 0.1.0),
     stringr,
     tibble,
     anytime,
